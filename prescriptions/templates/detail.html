@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Prescription Details</h2>
+
+<p><strong>Patient Name:</strong> {{ prescription.patient_name }}</p>
+<p><strong>Doctor Name:</strong> {{ prescription.doctor_name }}</p>
+
+<h3>Extracted Text:</h3>
+<p>{{ prescription.extracted_text }}</p>  <!-- This will now show the extracted text -->
+
+<a href="{% url 'prescriptions:upload_prescription' %}">Upload Another</a>
+{% endblock %}

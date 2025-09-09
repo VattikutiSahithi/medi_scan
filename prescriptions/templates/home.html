@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PharmaAssist AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to PharmaAssist AI</h1>
+    <p>Choose an option below:</p>
+    
+    <div class="container">
+        <a href="{% url 'prescriptions:upload_prescription' %}">Go to Upload Page</a>
+
+        
+        {% if prescription %}
+            <a href="{% url 'prescriptions:prescription_detail' pk=prescription.id %}">View Prescription Details</a>
+        {% else %}
+            <p>No prescriptions available yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+</html>
